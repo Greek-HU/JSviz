@@ -36,6 +36,33 @@ http.createServer((request, response)=>{
             });
             break;
         
+        /*case request.method == "POST" && request.url == '/times':
+            var savedTimes = '';
+
+            request.on('data', function(chunk){
+                savedTimes += chunk;
+            });
+            request.on('end', function(){
+                const SELTIME = JSON.parse(savedTimes);
+                let dt = new Date().getTime();
+
+                SELTIME.id = dt + "-" + (Math.floor( Math.random()*dt ) + dt);
+
+
+                fs.readFile(__dirname + '/foglalasok.json', function(err, resText){
+                    
+                    const SELTIME = JSON.parse(resText);
+                    SELTIME.push(SELTIME);
+
+                    fs.writeFile(__dirname + '/foglalasok.json', JSON.stringify(SELTIME), function(err){
+                        response.writeHead(200, {'Content-type': 'application/json; charset=utf8'});
+                        response.write(JSON.stringify({message: "OK"}));
+                        response.end();
+                    });
+
+                });
+            });*/
+        
         default:
             let ext = path.extname(request.url).slice(1);
             let mimetype = MIME.type(ext);

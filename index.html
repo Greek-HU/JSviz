@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Dynamic Calendar Example </title>
+     
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="./css/style.css">
+      <!-- Demo CSS (No Need to include it into your project) -->
+      <link rel="stylesheet" href="./css/demo.min.css">
+   </head>
+   <body>
+      <header class="page_header">
+         <div class="header_inner">
+            <div class="back_tutorial">
+               <a class="cd_btn" title="Back to tutorial and download page." href="https://www.codehim.com/date-time/dynamic-calendar…ipt-with-example/"> Back to Tutorial </a>
+            </div>
+            <div class="ad_unit">
+               <div class="ad">
+                  <h4>BLUEHOST SHARED HOSTING</h4>
+                  <p>A great place to start your website or blog. Free domain for 1 Year with Hosting Account in <span style="color:green">$2.95/mo*</span>... <a target="_blank" rel="sponsored nofollow" href="https://www.bluehost.com/track/codehim/"> Learn More </a></p>
+               </div>
+            </div>
+         </div>
+         <div class="project_intro">
+            <h1>Dynamic Calendar Example </h1>
+            <p class="project_description"> Create Calendar with HTML, CSS and javascript. </p>
+         </div>
+      </header>
+      <main>
+         <!-- Project Code Start -->
+
+         <div class="wrapper">
+    <div class="container-calendar">
+        <h3 id="monthAndYear"></h3>
+        <div class="button-container-calendar">
+            <button id="previous" onclick="previous()">&#8249;</button>
+            <button id="next" onclick="next()">&#8250;</button>
+        </div>
+        <table class="table-calendar" id="calendar" data-lang="en">
+            <thead id="thead-month"></thead>
+            <tbody id="calendar-body"></tbody>
+        </table>
+        <div class="footer-container-calendar">
+             <label for="month">Jump To: </label>
+             <select id="month" onchange="jump()">
+                 <option value=0>Jan</option>
+                 <option value=1>Feb</option>
+                 <option value=2>Mar</option>
+                 <option value=3>Apr</option>
+                 <option value=4>May</option>
+                 <option value=5>Jun</option>
+                 <option value=6>Jul</option>
+                 <option value=7>Aug</option>
+                 <option value=8>Sep</option>
+                 <option value=9>Oct</option>
+                 <option value=10>Nov</option>
+                 <option value=11>Dec</option>
+             </select>
+             <select id="year" onchange="jump()"></select>       
+        </div>
+    </div>
+</div>
+         
+         <!--Calendar pure javascript Script JS -->
+         <script type="text/javascript" src="./js/script.js"></script>
+         <!-- Project Code End -->
+      </main>
+      <footer class="credit"> Author: Adi Jaya - Distributed by: <a href="https://www.codehim.com/?source=demo"> CodeHim </a></footer>
+  
+   </body>
+</html>

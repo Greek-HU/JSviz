@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link rel="stylesheet" href="/public/css/style.css"-->
     <style>
         .btn{
             background-color: yellow;
@@ -20,7 +21,7 @@
             border: 1px solid black;
             padding: 5px;
         }
-        #sTime{
+        .Time{
             display: inline-block;
             color: white;
             border-radius: 3px;
@@ -39,22 +40,44 @@
             background-color: rgb(56, 56, 66);
             cursor:default;
         }
+        .month {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.day-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  width: calc(100% / 7);
+  height: 40px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 40px;
+}
+
     </style>
     <title>Document</title>
 </head>
 <body>
     <div class="boo"><span>0</span></div>
     <label for="">Kérem adja meg a nevét:</label>  
-    <input type="text" name="" id="userName">
-    <div class="list">
+    <input type="text" name="" id="name">
+    <!--div class="calendar" data-lang="eng"-->
         <div class="nap"></div>
         <div class="times"></div>
         
     </div>
+    
     <button class='tSave'>Foglal</button>
         <!--button id="btn">Mentés</button-->
 
     </div>
+    <span id="about"><a href="http://odran037.github.io" target="_blank"><i class="fa fa-question-circle"></i></a></span>
     <script src="script.js" type="module"></script>
 </body>
 </html>  
