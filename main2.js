@@ -8,7 +8,22 @@ app.use(
 );
 //Read
 app.get('/', (req, res) => {
-    fs.readFile(path.join(__dirname, 'public', 'index.html'), (err, body) => {
+    fs.readFile(path.join(__dirname, 'public', 'login.html'), (err, body) => {
+        res.writeHead(200, {
+            "content-length": Buffer.byteLength(body),
+            "content-type": "text/html"
+        })
+        .end(body)
+    })
+});
+app.get('/users', (req, res) => {
+    fs.readFile(path.join(__dirname, 'users.json'), (err, fileContent) => {
+        res.json(JSON.parse(fileContent));
+    });
+});
+
+app.get('/index', (req, res) => {
+    fs.readFile(path.join(__dirname, 'public', 'page.html'), (err, body) => {
         res.writeHead(200, {
             "content-length": Buffer.byteLength(body),
             "content-type": "text/html"
@@ -41,22 +56,21 @@ app.post('/times', (req, res) => {
 app.post('/edittimes', (req, res) => {
     const editedTimes = req.body;
     fs.readFile(__dirname + '/times.json', function(err, resText){
-                    
         const TIME = JSON.parse(resText);
-        //let tim = editedTimes.id;//TIME.find(t => t.id == editedTimes.id);
-        //let tim; 
-            for(let i = 0; i < TIME.length; i++){
-                for(let j = 0; j < TIME[i].length; j++){
-                    if(TIME[i][j].id === editedTimes.id){
-                        TIME[i][j].booked = true;
-                    }
+        for (let day in TIME){
+            for(let i=0; i < TIME[day].length; i++){
+                if(TIME[day][i].id == editedTimes.id){
+                    TIME[day][i].booked = editedTimes.booked;
+
+                    fs.writeFile(__dirname + '/times.json', JSON.stringify(TIME), function(err){
+                        res.json({message: "OK"}); 
+                    });
                 }
+                
             }
-            //tim.booked = editedTimes.booked;
-            //tim.booked = true;
-            fs.writeFile(__dirname + '/times.json', JSON.stringify(TIME), function(err){
-                    res.json({message: "OK"}); 
-                });
+        }
+        
+            /**/
              
     });
 });

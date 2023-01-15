@@ -1,132 +1,49 @@
-html {
-    font-family: sans-serif;
-    font-size: 15px;
-    line-height: 1.4;
-    color: #444;
-}
 
-body {
-    margin: 0;
-    background: #504f4f;
-    font-size: 1em;
-}
-
-.wrapper {
-    margin: 15px auto;
-    max-width: 1100px;
-}
-
-.container-calendar {
-    background: #ffffff;
-    padding: 15px;
-    max-width: 475px;
-    margin: 0 auto;
-    overflow: auto;
-}
-
-.button-container-calendar button {
-    cursor: pointer;
-    display: inline-block;
-    zoom: 1;
-    background: #00a2b7;
-    color: #fff;
-    border: 1px solid #0aa2b5;
-    border-radius: 4px;
-    padding: 5px 10px;
-}
-
-.table-calendar {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.table-calendar td, .table-calendar th {
-    padding: 5px;
-    border: 1px solid #e2e2e2;
+#login{
+    background-color: rgb(119, 99, 55);
+    border-radius: 10px;
+    box-shadow: 10px 10px 8px rgb(192, 155, 76);
+    width: 30%;
+    font-size: x-large;
     text-align: center;
-    vertical-align: top;
+    padding: 48px 0 50px 0;
+    margin:26% 0 0 35%;
 }
-
-.date-picker.selected {
-    font-weight: bold;
-    outline: 1px dashed #00BCD4;
-}
-
-.date-picker.selected span {
-    border-bottom: 2px solid currentColor;
-}
-
-/* sunday */
-.date-picker:nth-child(1) {
-  color: red;
-}
-
-/* friday */
-.date-picker:nth-child(6) {
-  color: green;
-}
-
-#monthAndYear {
-    text-align: center;
-    margin-top: 0;
-}
-
-.button-container-calendar {
-    position: relative;
-    margin-bottom: 1em;
-    overflow: hidden;
-    clear: both;
-}
-
-#previous {
-    float: left;
-}
-
-#next {
-    float: right;
-}
-
-.footer-container-calendar {
-    margin-top: 1em;
-    border-top: 1px solid #dadada;
-    padding: 10px 0;
-}
-
-.footer-container-calendar select {
-    cursor: pointer;
-    display: inline-block;
-    zoom: 1;
-    background: #ffffff;
-    color: #585858;
-    border: 1px solid #bfc5c5;
-    border-radius: 3px;
-    padding: 5px 1em;
-}
-.btn{
-    background-color: yellow;
-    height: 10px;
-    width: 10px;
-}
-.list{
-    margin: 0 10%;
+input{
+    border-radius: 5px;
+    padding: 10px;
+    margin: 16px;
 }
 .dayCss{
+    width: 40%;
+    background-color: rgb(195, 195, 224);
+    border: 1px solid silver;
+    border-radius: 5px;
+    font-size: large;
     font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    margin: 5px auto;
 }
 .times{
-    border: 1px solid black;
+    width: 50%;
+    text-align: center;
     padding: 5px;
+    margin: 9px auto;
 }
 .Time{
     display: inline-block;
     color: white;
     border-radius: 3px;
-    padding: 3px;
+    padding: 6px;
     margin: 5px;
 }
 .cBooked{
     background-color: rgb(171, 171, 238 );
     cursor: pointer;
+}
+.cBooked:hover{
+    background-color: rgb(128, 128, 245);
 }
 .sBooked{
     background-color: gray;
@@ -135,4 +52,36 @@ body {
 .booked{
     background-color: rgb(56, 56, 66);
     cursor:default;
+}
+.tSave{
+    margin: 0 48%;
+}
+.cardBox{
+    text-align: center;
+}
+#card{
+    display: inline-block;
+    border-radius: 15px;
+    cursor: pointer;
+    height: 11rem;
+    width: 14rem;
+    margin: 6rem;
+}
+.woman{
+    background-color: rgb(248, 181, 192);
+    box-shadow: 5px 7px 7px rgb(243, 104, 130);
+}
+.man{
+    background-color: rgb(131, 48, 48);
+    box-shadow: 5px 7px 7px brown;
+}
+#btn{
+    background-color: beige;
+    cursor: pointer;
+    border: 2px solid rgb(202, 202, 127);
+    border-radius: 6px;
+    font-weight: normal;
+    font-style: normal;
+    font-weight: bold;
+    padding: 10px;
 }

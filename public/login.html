@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Fodrászat</title>
+    <style>
+        body{ 
+            background-image: url(./img/logo-color.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position:0 65%;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <form action="/login" method="post">
+            <label for="uName">Kérem adja meg a nevét:</label><br>
+                <input type="text" name="" id="name" placeholder="Pl: Foszto Zsolt" required><br>
+            <label for="uPassword">Jelszó:</label><br>
+                <input type="text" name="password" id="password" placeholder="Pl: prooktatas" required><br>
+        </form>
+        
+        <input type="submit" id="btn" class="logIn" value="Belépés">
+    </div>
+    <script src="log.script.js" type="module"></script>
+</body>
+</html>
