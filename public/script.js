@@ -7,10 +7,9 @@ var TIME = [];
 var SELTIME = []; //JSON.parse(localStorage.getItem("SELTIME"));
 var timesOn = $s('.times');
 var timeSave = $s('.tSave');
+var timeDiv = $s('.Time');
 window.creatId = null;
 window.creatTime = null;
-timesOn.style.display = 'none';
-console.log(document.cookie);
 
 var dayTPL = (d) =>
     `<div class='dayCss'>${d}</div>`;
@@ -22,6 +21,7 @@ function getTime(timeArray) {
     for (const day in timeArray) {
         timeStr += dayTPL(day);
         for (const ti of timeArray[day]) {
+            //getNonBooked(ti.booked);
             cssName = ti.booked == false ? "cBooked" : "booked";
             timeStr += timeTPL(ti, cssName);
         }
@@ -29,6 +29,11 @@ function getTime(timeArray) {
     timeStr += `</div>`;
     timesOn.innerHTML = timeStr;
 
+   /* $sAll('#cat').forEach((cat)=>{
+        cat.onclick = function(){
+
+        }
+    });*/
     
     $sAll('.cBooked').forEach((timeBox, index) => {
         const tim = timeBox.dataset.id;
@@ -70,7 +75,8 @@ function getTime(timeArray) {
                 }
             );
         }
-    })
+        
+    });
 }
 function booked() {
     request.post("/times",
@@ -82,8 +88,39 @@ function booked() {
         }
     ); 
 }
+console.log(timeDiv);
+$sAll('#cat').forEach((cat)=>{
+    cat.onclick = function(){
+        //for(let i=0; i<timeDiv.length; i++)
+    }
+});
+function getNonBooked(object){
+    
+    for(let day in object){
+        for (let i = 0; i < object[day].length; i++) {
+            if(object[day][i].booked === false){
+                $s('.Time').innerHTML += `<div id='${object[day][i].id}' data-time="${object[day][i].time}" Time'>${object[day][i].time}</div>`
+                //console.log(`${day} ${object[day][i].time}`);
+            }  
+        }
+    }
+    
+}       
+$sAll('#cat').forEach((cat)=>{
+    cat.onclick = function(){
+        //timesOn.style.display = 'block';
+        //getNonBooked(TIME)
+        
+        //timeDiv.style.display = 'inline-block';
+
+        /*console.log($s('.Time').id);
+            $s('.Time').id = 1 == $s('.Time').style.display ? 'block' : 'block';*/
+              
+    }
+});
 $sAll('#card').forEach((cards)=>{
     cards.onclick = function(){
+         
         if(cards.classList.contains('woman')){
             document.body.style.backgroundColor = 'rgb(241, 211, 216)';
             timesOn.style.display = 'block';
@@ -92,18 +129,18 @@ $sAll('#card').forEach((cards)=>{
         
         if(cards.classList.contains('man')){
             document.body.style.backgroundColor = 'lightsalmon';
-            timesOn.style.display = 'block';
             timeSave.disabled = false;
         }
-        
+    
     }
-})
+});
+
 function loadTime() {
     request.get("/times", function (res) {
         TIME = JSON.parse(res);
         
         getTime(TIME);
-
+        
     });
 }
 window.onload = loadTime();

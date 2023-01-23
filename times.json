@@ -3,7 +3,7 @@
         {
             "id": "1",
             "time": "08:00 - 08:30",
-            "booked": false
+            "booked": true
         },
         {
             "id": "2",
