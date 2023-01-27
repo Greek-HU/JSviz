@@ -8,15 +8,15 @@ function loadUsers() {
         USER = JSON.parse(res);
     });
 }
-console.log(document.cookie);
-
 $s('.logIn').onclick = function() {
     var uName = $s('#name').value;
     var pword = $s('#password').value;
     for(let i=0; i<USER.length; i++)
         if(uName == USER[i].name && pword == USER[i].password){
+            var uEmail = USER[i].email;
+            var uTel = USER[i].tel;
             request.get("/index", function (res) {
-                document.cookie = uName;
+                document.cookie = uName +","+ uEmail+","+uTel;
                 window.location.href = "page.html";
             });
             

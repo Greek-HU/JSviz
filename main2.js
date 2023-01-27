@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const { json } = require('express');
 const app = express();
 
 app.use(
@@ -17,7 +18,7 @@ app.get('/', (req, res) => {
     })
 });
 app.get('/users', (req, res) => {
-    fs.readFile(path.join(__dirname, 'users.json'), (err, fileContent) => {
+    fs.readFile(path.join(__dirname, '/private/users.json'), (err, fileContent) => {
         res.json(JSON.parse(fileContent));
     });
 });
@@ -33,7 +34,7 @@ app.get('/index', (req, res) => {
 });
 
 app.get('/times', (req, res) => {
-    fs.readFile(path.join(__dirname, 'times.json'), (err, fileContent) => {
+    fs.readFile(path.join(__dirname, './private/times.json'), (err, fileContent) => {
         res.json(JSON.parse(fileContent));
     });
 });
@@ -43,11 +44,11 @@ app.post('/times', (req, res) => {
     const newTime = req.body;
     //newTime.id = new Date().getTime();
 
-    fs.readFile(__dirname + '/foglalasok.json', function(err, resText){
+    fs.readFile(__dirname + '/private/foglalasok.json', function(err, resText){
                     
         const SELTIME = JSON.parse(resText);
         SELTIME.push(newTime);            
-            fs.writeFile(__dirname + '/foglalasok.json', JSON.stringify(SELTIME), function(err){
+            fs.writeFile(__dirname + '/private/foglalasok.json', JSON.stringify(SELTIME), function(err){
                     res.json({message: "OK"}); 
                 });
     });
@@ -55,14 +56,14 @@ app.post('/times', (req, res) => {
 //Edit
 app.post('/edittimes', (req, res) => {
     const editedTimes = req.body;
-    fs.readFile(__dirname + '/times.json', function(err, resText){
+    fs.readFile(__dirname + '/private/times.json', function(err, resText){
         const TIME = JSON.parse(resText);
         for (let day in TIME){
             for(let i=0; i < TIME[day].length; i++){
                 if(TIME[day][i].id == editedTimes.id){
                     TIME[day][i].booked = editedTimes.booked;
 
-                    fs.writeFile(__dirname + '/times.json', JSON.stringify(TIME), function(err){
+                    fs.writeFile(__dirname + '/private/times.json', JSON.stringify(TIME), function(err){
                         res.json({message: "OK"}); 
                     });
                 }

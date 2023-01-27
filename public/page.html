@@ -1,28 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style.css">
-    
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/carousel.css">
+    <link rel="stylesheet" href="./css/price.css">
+    <title>ProoBarber</title>
 </head>
-<body>
-    
-    <div class="cardBox">
-        <div id="card" class="woman"><p>Női fodrász</p></div>
-        <div id="card" class="man"><p>Férfi fodrász</p></div>
-    </div>
-    <div id="cat" class="first" style="background-color: black;"></div>
-    <div id="cat" class="sec" style="background-color: blue;"></div>
-    <div id="cat" class="third" style="background-color: red;"></div>
-    <div class="times" ></div>
-    
-    <button id="btn" class='tSave' disabled>Foglal</button>
 
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="navlist">
+                <li><a href="#">Főoldal</a></li>
+                <li><a href="#prices">Áraink</a></li>
+                <li><a href="#timebooked">Időpontfoglalás</a></li>
+                <li><a href="#contact">Kapcsolat</a></li>
+            </ul>
+        </nav>
+        <div class="carousel">
+            <div class="pic-ctn">
+                <img src="./img/pexels-krzysztof-chrostowski-10593034.jpg" alt="" class="pic">
+                <img src="./img/pexels-nikolaos-dimou-1319461.jpg" alt="" class="pic">
+                <img src="./img/pexels-engin-akyurt-3065171.jpg" alt="" class="pic">
+                <img src="./img/pexels-cottonbro-studio-3993125.jpg" alt="" class="pic">
+                <img src="./img/pexels-nikolaos-dimou-1319459.jpg" alt="" class="pic">
+              </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container" id="prices">
+                <h1>Áraink</h1>
+                    <div class="table">
+                        <h2 class="heading">Férfi fodrász</h2>
+                        <div class="block">
+                        <p>Hajvágás
+                            <span class="price">2500 Ft./
+                                <sub>tétel</sub>
+                            </span>   
+                                <ul class="options">
+                                    <li>Vágás</li>
+                                    <li>Festés</li>
+                                    <li>Melír</li>
+                                </ul>
+                        </p>
+                        </div>
+                        <div class="block">
+                            <p>Borotválás
+                                <span class="price">2000 Ft./
+                                    <sub>tétel</sub>
+                                </span>   
+                                    <ul class="options">
+                                        <li>Bajusz igazízás</li>
+                                        <li>Szakáll igazítás</li>
+                                        <li>Teljes borotválás</li>
+                                    </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <h2 class="heading">Női hajápolás</h2>
+                            <div class="block">
+                                <p>Haj vágás
+                                    <span class="price">3500 Ft./
+                                        <sub>tétel</sub>
+                                    </span>   
+                                    <ul class="options">
+                                        <li>Mosás + Szárítás</li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="block">
+                            <p>Haj festés
+                                <span class="price">6500 Ft./
+                                    <sub>tétel</sub>
+                                </span>   
+                                <ul class="options">
+                                    <li>Festés + szárítás és vágás</li>
+                                    <li>Melír + szárítás és vágás</li>
+                                    <li>Hozott festék esetén 1500 Ft. felár</li>
+                                </ul>
+                            </p>
+                            </div>
+                            <div class="block">
+                                <p>Haj technikai szolgáltatások
+                                    <span class="price">1000 Ft.
+                                        <sub></sub>
+                                    </span>   
+                                    <ul class="options">
+                                        <li>Vasalás</li>
+                                    </ul>
+                                    <span class="price">3600 - 5000 Ft
+                                        <sub></sub>
+                                    </span>   
+                                    <ul class="options">
+                                        <li>Göndörítés</li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="block">
+                                <p>Haj technikai szolgáltatások
+                                    <span class="price">10.000 - 15.000 Ft.
+                                        <sub></sub>
+                                    </span>   
+                                    <ul class="options">
+                                        <li>Ombre</li>
+                                    </ul>
+                                    <span class="price">9600 - 14.000 Ft
+                                        <sub></sub>
+                                    </span>   
+                                    <ul class="options">
+                                        <li>Balayage</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="table">
+                            <h2 class="heading">Gyermek Fordászat</h2>
+                            <div class="block">
+                                <p>6 éves korig 
+                                    <span class="price">2000 Ft./
+                                        <sub></sub>
+                                    </span>   
+                                </p>
+                            </div>
+                        <div class="block">
+                            <p>12 éves korig
+                                <span class="price">2500 Ft./
+                                    <sub></sub>
+                                </span>   
+                            </p>
+                        </div>
+                        <div class="block">
+                            <p>12 éves korig hosszú
+                                <span class="price">3000 Ft./
+                                    <sub></sub>
+                                </span>   
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <div class="times" id="timebooked"></div>
+        <button id="btn" class='tSave' disabled>Foglal</button>
     </div>
+
+    <div id="contact"></div>
+
     <script src="script.js" type="module"></script>
 </body>
-</html>  
+
+</html>

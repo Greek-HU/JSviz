@@ -1,25 +1,39 @@
-
-#login{
-    display: flex;
-    /*background-color: rgb(119, 99, 55);
-    border-radius: 10px;
-    box-shadow: 10px 10px 8px rgb(192, 155, 76);*/
-    color: white;
-    width: 30%;
-    font-size: x-large;
-    text-align: center;
-    padding: 48px 0 50px 0;
-    margin:26% 0 0 35%;
+*{
+    margin: 0;
+    padding: 0;
 }
-input{
-    border-radius: 5px;
-    padding: 10px;
-    margin: 16px;
+body{
+    background-image:url(/img/bgwp.jpg);
+    /*background-image: url(/public/img/bgwp.jpg);*/
+    background-size: contain;
+}
+header{
+    width: 50%;
+}
+.navbar{
+    padding: 0 0 0 68% ;
+}
+.navlist{
+    display: flex;
+    list-style:none
+}
+.navbar a{
+    display: flex;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 0 20px 50px;
+    margin: 10px;
+}
+.container{
+    margin-top: 550px;
+    font-family: 'Poppins', sans-serif;
 }
 .dayCss{
     width: 40%;
-    background-color: rgb(195, 195, 224);
-    border: 1px solid silver;
+    background-color: rgb(142, 142, 221);
+    border: 2px solid silver;
     border-radius: 5px;
     font-size: large;
     font-weight: bold;
@@ -29,10 +43,12 @@ input{
 }
 .times{
     display: block;
-    width: 50%;
+    background-color: rgba(255, 255, 255);
+    border-radius: 15px;
+    width: 60%;
     text-align: center;
     padding: 5px;
-    margin: 9px auto;
+    margin: 35% 0 0 20%;
 }
 .Time{
     display: inline-block;
@@ -42,7 +58,7 @@ input{
     margin: 5px;
 }
 .cBooked{
-    background-color: rgb(171, 171, 238 );
+    background-color: rgb(107, 107, 172);
     cursor: pointer;
 }
 .cBooked:hover{
@@ -85,6 +101,9 @@ input{
     width: 100px;
     margin: 2rem;
 }
+.tSave{
+    padding: 8px;
+}
 #btn{
     background-color: beige;
     cursor: pointer;
@@ -93,5 +112,4 @@ input{
     font-weight: normal;
     font-style: normal;
     font-weight: bold;
-    padding: 10px;
 }

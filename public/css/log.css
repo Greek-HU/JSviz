@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{ 
+    background-image: url(/img/logo-color.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:0 65%;
+}
+#login{
+    text-align: center;
+}
+#login form{
+    display:block;
+    /*background-color: rgb(119, 99, 55);
+    border-radius: 10px;
+    box-shadow: 10px 10px 8px rgb(192, 155, 76);*/
+    color: white;
+    text-align: right;
+    width: 30%;
+    font-size: x-large;
+    padding: 48px 0 5px 0;
+    margin:30% 0 0 27%;
+}
+input{
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
