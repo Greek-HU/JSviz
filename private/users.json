@@ -1,6 +1,7 @@
 [
     {
-        "name": "Greguss Karoly",
+        "id": 0,
+        "name": "Greguss Károly",
         "password": "prooktatas",
         "email": "gregusk89@gmail.com",
         "tel": "06202564425"

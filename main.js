@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
         .end(body)
     })
 });
+
 app.get('/users', (req, res) => {
     fs.readFile(path.join(__dirname, '/private/users.json'), (err, fileContent) => {
         res.json(JSON.parse(fileContent));
@@ -53,6 +54,19 @@ app.post('/times', (req, res) => {
                 });
     });
 });
+app.post('/signin', (req, res) => {
+    const newUser = req.body;
+    newUser.id = new Date().getTime();
+
+    fs.readFile(__dirname + '/private/users.json', function(err, resText){
+                    
+        const USER = JSON.parse(resText);
+        USER.push(newUser);
+            fs.writeFile(__dirname + '/private/users.json', JSON.stringify(USER), function(err){
+                    res.json({message: "OK"}); 
+                });
+    });
+});
 //Edit
 app.post('/edittimes', (req, res) => {
     const editedTimes = req.body;
@@ -67,27 +81,9 @@ app.post('/edittimes', (req, res) => {
                         res.json({message: "OK"}); 
                     });
                 }
-                
             }
-        }
-        
-            /**/
-             
+        }             
     });
 });
-//Delet
-/*app.delete('/product/:id', (req, res) => {
-    const deletedId = req.params.id;
-    fs.readFile(__dirname + '/termekek.json', function(err, resText){
-                    
-        const PRODUCTS = JSON.parse(resText);
-        const deletedIndex = PRODUCTS.findIndex(p => p.id == deletedId);
 
-        PRODUCTS.splice(deletedIndex, 1);        
-
-        fs.writeFile(__dirname + '/termekek.json', JSON.stringify(PRODUCTS), function(err){
-            res.json({message: "A termék sikeresen törölve"});
-        });
-    });
-});*/
-app.listen(3001);
+app.listen(3000);

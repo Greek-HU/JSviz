@@ -3,15 +3,15 @@
     padding: 0;
 }
 body{ 
-    background-image: url(/img/logo-color.png);
+    background-image: url(../img/logo-color.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position:0 65%;
 }
-#login{
+#login, #regDiv{
     text-align: center;
 }
-#login form{
+form{
     display:block;
     /*background-color: rgb(119, 99, 55);
     border-radius: 10px;
@@ -27,4 +27,19 @@ input{
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
+}
+.signIn{
+    color: red;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btn{
+    background-color: beige;
+    cursor: pointer;
+    border: 2px solid rgb(202, 202, 127);
+    border-radius: 6px;
+    font-weight: normal;
+    font-style: normal;
+    font-weight: bold;
 }
